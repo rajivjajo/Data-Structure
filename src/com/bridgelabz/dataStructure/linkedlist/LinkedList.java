@@ -9,14 +9,14 @@ public class LinkedList <T>{
             head = newNode;
             tail = newNode;
         }else {
-            newNode.next = head;
-            head = newNode;
+            tail.next = newNode;
+            tail = newNode;
         }
     }
     public void display(){
         Node<T> temp = head;
         while ( temp != null ){
-            System.out.println(temp.data+"->");
+            System.out.print(temp.data+"->");
             temp = temp.next;
         }
         System.out.println();
