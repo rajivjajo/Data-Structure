@@ -20,5 +20,13 @@ public class LinkedListMain {
         linkedList1.display();
         System.out.println(linkedList1.pop()+" is popped");
         linkedList1.display();
+
+        LinkedList<Integer> linkedList2 = new LinkedList<>();
+        linkedList2.push(56);
+        linkedList2.push(30);
+        linkedList2.push(70);
+        linkedList2.display();
+        System.out.println(linkedList2.popLast()+" is popped from last !");
+        linkedList2.display();
     }
 }
