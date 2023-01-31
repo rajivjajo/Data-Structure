@@ -1,5 +1,7 @@
 package com.bridgelabz.dataStructure.linkedlist;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class LinkedList <T>{
     Node<T> head;
     Node<T> tail;
@@ -9,6 +11,16 @@ public class LinkedList <T>{
             head = newNode;
             tail = newNode;
         }else {
+            tail.next = newNode;
+            tail = newNode;
+        }
+    }
+    public void append(T data) {
+        Node<T> newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
             tail.next = newNode;
             tail = newNode;
         }
@@ -32,6 +44,11 @@ public class LinkedList <T>{
             return true;
         }
         return false;
+    }
+    public T pop(){
+        T popData = head.data;
+         head = head.next;
+         return popData;
     }
     public void display(){
         Node<T> temp = head;
