@@ -47,5 +47,14 @@ public class LinkedListMain {
             System.out.println("Element not inserted!!");
 
         linkedList3.display();
+
+        LinkedList linkedList4 = new LinkedList();
+        linkedList4.push(56);
+        linkedList4.push(30);
+        linkedList4.push(40);
+        linkedList4.push(70);
+        System.out.println(linkedList4.delete(40)+" is deleted");
+        linkedList4.display();
+        linkedList4.size();
     }
 }
