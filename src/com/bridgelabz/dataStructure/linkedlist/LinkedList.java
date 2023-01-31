@@ -1,7 +1,5 @@
 package com.bridgelabz.dataStructure.linkedlist;
 
-import org.w3c.dom.ls.LSOutput;
-
 public class LinkedList <T>{
     Node<T> head;
     Node<T> tail;
