@@ -40,7 +40,7 @@ public class LinkedListMain {
         else
             System.out.println("Element Found!!");
 
-        boolean isInserted = linkedList3.insertAfter(40, 30);
+        boolean isInserted = linkedList3.insertAfter(30, 30);
         if (isInserted)
             System.out.println("Element inserted successfully!!");
         else
