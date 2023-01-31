@@ -50,6 +50,17 @@ public class LinkedList <T>{
          head = head.next;
          return popData;
     }
+    public T popLast() {
+        T popData = tail.data;
+        Node<T> temp = head;
+        while (temp.next != tail) {
+            temp = temp.next;
+        }
+        temp.next = null;
+        tail = temp;
+        return popData;
+
+    }
     public void display(){
         Node<T> temp = head;
         while ( temp != null ){
