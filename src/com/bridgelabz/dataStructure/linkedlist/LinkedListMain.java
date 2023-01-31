@@ -28,5 +28,14 @@ public class LinkedListMain {
         linkedList2.display();
         System.out.println(linkedList2.popLast()+" is popped from last !");
         linkedList2.display();
+
+        LinkedList<Integer> linkedList3 = new LinkedList<>();
+        linkedList3.push(56);
+        linkedList3.push(30);
+        linkedList3.push(70);
+        if (linkedList3.search(30) == null)
+            System.out.println("Element not found!!");
+        else
+            System.out.println("Element Found!!");
     }
 }
