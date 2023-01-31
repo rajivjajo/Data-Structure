@@ -28,14 +28,24 @@ public class LinkedListMain {
         linkedList2.display();
         System.out.println(linkedList2.popLast()+" is popped from last !");
         linkedList2.display();
-
-        LinkedList<Integer> linkedList3 = new LinkedList<>();
-        linkedList3.push(56);
-        linkedList3.push(30);
+        
+        LinkedList<Integer> linkedList3 = new LinkedList();
         linkedList3.push(70);
-        if (linkedList3.search(30) == null)
+        linkedList3.push(30);
+        linkedList3.push(56);
+
+        linkedList3.display();
+        if (linkedList3.search(40) == null)
             System.out.println("Element not found!!");
         else
             System.out.println("Element Found!!");
+
+        boolean isInserted = linkedList3.insertAfter(30, 30);
+        if (isInserted)
+            System.out.println("Element inserted successfully!!");
+        else
+            System.out.println("Element not inserted!!");
+
+        linkedList3.display();
     }
 }
