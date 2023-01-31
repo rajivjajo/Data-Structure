@@ -3,10 +3,14 @@ package com.bridgelabz.dataStructure.linkedlist;
 public class LinkedListMain {
     public static void main(String[] args) {
         LinkedList<Integer> linkedList =  new LinkedList<>();
-        linkedList.push(70);
-        linkedList.push(30);
-        linkedList.push(56);
-
+        linkedList.add(70);
+        linkedList.add(30);
+        linkedList.add(56);
         linkedList.display();
+        LinkedList<Integer> linkedList1 = new LinkedList<>();
+        linkedList.insert(40);
+        linkedList.display();
+
+
     }
 }
