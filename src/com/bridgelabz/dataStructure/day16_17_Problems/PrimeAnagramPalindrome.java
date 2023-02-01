@@ -1,47 +1,17 @@
 package com.bridgelabz.dataStructure.day16_17_Problems;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 
 public class PrimeAnagramPalindrome {
 
-    public static void main(String[] args) {
-
-        // create an array list to store prime numbers
-        ArrayList<Integer> primeNumbers = new ArrayList<>();
-
-        // loop through numbers from 0 to 1000
-        for (int i = 0; i <= 1000; i++) {
-            if (isPrime(i)) {
-                primeNumbers.add(i);
-            }
-        }
-
-        // convert ArrayList to array for sorting
-        Integer[] primes = primeNumbers.toArray(new Integer[0]);
-
-        // sort the array
-        Arrays.sort(primes);
-
-        // loop through the prime numbers array
-        for (int i = 0; i < primes.length - 1; i++) {
-            for (int j = i + 1; j < primes.length; j++) {
-                if (isAnagram(primes[i], primes[j])) {
-                    if (isPalindrome(primes[i]) && isPalindrome(primes[j])) {
-                        System.out.println(primes[i] + " and " + primes[j] + " are both prime and anagram and palindrome");
-                    }
-                }
-            }
-        }
-    }
-
-    // method to check if a number is prime or not
-    public static boolean isPrime(int number) {
-        if (number <= 1) {
+    // method to check if a number is prime
+    public static boolean isPrime(int num) {
+        if (num <= 1) {
             return false;
         }
-        for (int i = 2; i <= number / 2; i++) {
-            if (number % i == 0) {
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
                 return false;
             }
         }
@@ -50,22 +20,49 @@ public class PrimeAnagramPalindrome {
 
     // method to check if two numbers are anagrams
     public static boolean isAnagram(int num1, int num2) {
-        char[] num1Chars = Integer.toString(num1).toCharArray();
-        char[] num2Chars = Integer.toString(num2).toCharArray();
-        Arrays.sort(num1Chars);
-        Arrays.sort(num2Chars);
-        return Arrays.equals(num1Chars, num2Chars);
+        ArrayList<Integer> num1Digits = new ArrayList<>();
+        ArrayList<Integer> num2Digits = new ArrayList<>();
+
+        while (num1 > 0) {
+            num1Digits.add(num1 % 10);
+            num1 /= 10;
+        }
+
+        while (num2 > 0) {
+            num2Digits.add(num2 % 10);
+            num2 /= 10;
+        }
+
+        Collections.sort(num1Digits);
+        Collections.sort(num2Digits);
+
+        return num1Digits.equals(num2Digits);
     }
 
     // method to check if a number is a palindrome
-    public static boolean isPalindrome(int number) {
-        int temp = number;
-        int reversed = 0;
-        while (temp != 0) {
-            int lastDigit = temp % 10;
-            reversed = reversed * 10 + lastDigit;
-            temp /= 10;
+    public static boolean isPalindrome(int num) {
+        int originalNum = num;
+        int reversedNum = 0;
+
+        while (num > 0) {
+            int lastDigit = num % 10;
+            reversedNum = reversedNum * 10 + lastDigit;
+            num /= 10;
         }
-        return number == reversed;
+
+        return originalNum == reversedNum;
+    }
+
+    public static void main(String[] args) {
+        int rangeStart = 0;
+        int rangeEnd = 1000;
+
+        System.out.println("Prime numbers that are both anagrams and palindromes in the range [" + rangeStart + ", " + rangeEnd + "]:");
+        for (int i = rangeStart; i <= rangeEnd; i++) {
+            if (isPrime(i) && isAnagram(i, i) && isPalindrome(i)) {
+                System.out.print(i + " ");
+            }
+        }
     }
 }
+
