@@ -1,6 +1,4 @@
-package com.bridgelabz.dataStructure;
-
-import com.bridgelabz.dataStructure.linkedlist.LinkedList;
+package com.bridgelabz.dataStructure.linkedlist;
 
 public class Queue <T>{
     LinkedList<T> linkedList;
@@ -9,15 +7,10 @@ public class Queue <T>{
     }
 
     public void enqueue(T data) {
-        linkedList.push(data);
+        linkedList.append(data);
     }
-
-    public void pop() {
-        System.out.println("\nPopped Element is : "+linkedList.head.data);
-        linkedList.pop();
-    }
-
     public void display(){
         linkedList.display();
     }
+
 }
