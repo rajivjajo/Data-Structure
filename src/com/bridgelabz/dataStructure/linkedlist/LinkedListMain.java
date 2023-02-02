@@ -56,5 +56,14 @@ public class LinkedListMain {
         System.out.println(linkedList4.delete(40)+" is deleted");
         linkedList4.display();
         linkedList4.size();
+
+        System.out.println("\n*******************Stacks****************");
+
+        Stack stackList = new Stack();
+        stackList.push(70);
+        stackList.push(30);
+        stackList.push(56);
+        stackList.display();
+
     }
 }
