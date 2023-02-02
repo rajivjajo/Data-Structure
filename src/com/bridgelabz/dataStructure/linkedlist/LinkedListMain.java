@@ -89,8 +89,11 @@ public class LinkedListMain {
         queueList.enqueue(56);
         queueList.enqueue(30);
         queueList.enqueue(70);
-
         queueList.display();
+
+        queueList.dequeue();
+        queueList.display();
+
 
 
     }
