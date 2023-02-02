@@ -83,6 +83,15 @@ public class LinkedListMain {
         stackList.popPeakTillEmpty();
         stackList.display();
 
+        System.out.println("\n*******************Queue****************");
+
+        Queue queueList = new Queue();
+        queueList.enqueue(56);
+        queueList.enqueue(30);
+        queueList.enqueue(70);
+
+        queueList.display();
+
 
     }
 }
