@@ -56,11 +56,24 @@ public class LinkedListMain {
         System.out.println(linkedList4.delete(40)+" is deleted");
         linkedList4.display();
         linkedList4.size();
+        
+        
         SortedLinkedList sortedLinkedList = new SortedLinkedList();
         sortedLinkedList.sortLinkedlist(56);
         sortedLinkedList.sortLinkedlist(30);
         sortedLinkedList.sortLinkedlist(40);
         sortedLinkedList.sortLinkedlist(70);
         System.out.println(sortedLinkedList.display()+" is sorted Linked list! ");
+
+
+        System.out.println("\n*******************Stacks****************");
+
+        Stack stackList = new Stack();
+        stackList.push(70);
+        stackList.push(30);
+        stackList.push(56);
+        stackList.display();
+
+
     }
 }
