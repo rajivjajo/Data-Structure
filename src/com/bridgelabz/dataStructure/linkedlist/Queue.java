@@ -9,8 +9,13 @@ public class Queue <T>{
     public void enqueue(T data) {
         linkedList.append(data);
     }
+    public void dequeue() {
+        System.out.println("\nDequeued Element is : "+linkedList.head.data);
+        linkedList.pop();
+    }
     public void display(){
         linkedList.display();
+
     }
 
 }
